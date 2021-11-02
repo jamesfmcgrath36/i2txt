@@ -18,17 +18,17 @@ Usage
 	1. 	Copy scanned pictures of documents and images into the /targets folder.
 	2. 	Execute the script 'run.cmd' by clicking on it.
 	3.	Output will be saved in the /targets folder, as a text file with the same name of the image
-	
+
 	Example:	scanned_doc1.png will be saved as scanned_doc1.png.txt 
-	
+
 	Note: 		i2txt will perform OCR on all images in the /targets folder. Prior to execution, remove images 
 				you do not want to perform OCR on.
-				
+			
 Liscences/Copyright
 	i2txt is Copyright (C) 2015, 2021 James McGrath and Liscenced under the 
 	terms of the GNU General Public License, Version 3. A full copy of this 
 	liscence can be found at https://www.gnu.org/licenses/gpl-3.0.txt
-	
+
 	Tess4j is Copyright @ 2012 Quan Nguyen and Licensed under the 
 	Apache License, Version 2.0. A full copy of this liscence can be found
 	at http://www.apache.org/licenses/LICENSE-2.0
