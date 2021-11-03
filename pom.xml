@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--========== MANDATORY FIELDS ==========-->
+    <!-- POM model version, always 4.0.0 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- organization name -->
+    <groupId>org.jfm</groupId>
+
+    <!-- project name -->
+    <artifactId>i2txt</artifactId>
+
+    <!-- version -->
+    <version>0.1.0</version>
+
+    <!--========== OPTIONAL FIELDS ==========-->
+        <dependencies>
+            <dependency>
+                <groupId>net.sourceforge.tess4j</groupId>
+                <artifactId>tess4j</artifactId>
+                <version>3.4.8</version>
+            </dependency>
+        </dependencies>
+
+    <!-- reusable variable declarations -->
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <!-- Build Settings -->
+    <build>
+
+        <!-- maven plugins -->
+        <plugins>
+
+            <!-- maven shade, allows for bundling dependencies in jave, making jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+
+                                    <!-- the projects main class -->
+                                    <mainClass>i2txt.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- More Project Information
+        <name></name>
+        <description></description>
+        <url></url>
+        <inceptionYear></inceptionYear>
+        <licenses></licenses>
+        <organization></organization>
+        <developers></developers>
+        <contributors></contributors>
+    -->
+</project>

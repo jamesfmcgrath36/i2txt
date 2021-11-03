@@ -15,6 +15,6 @@
 :: You should have received a copy of the GNU General Public License
 :: along with i2txt.  If not, see <https://www.gnu.org/licenses/>.
 @ECHO OFF 
-java -jar i2txt.jar
+java -jar i2txt-0.1.0.jar
 echo Done!
 pause
