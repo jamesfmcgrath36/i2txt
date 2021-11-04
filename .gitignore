@@ -1,0 +1,7 @@
+# annoying auto-generated files
+**/.project
+**/.settings
+**/.classpath
+**/.factorypath
+**/.settings/
+**/target/

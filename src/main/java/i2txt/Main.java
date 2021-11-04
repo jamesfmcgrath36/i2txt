@@ -38,16 +38,12 @@ public class Main {
       public static void main(String[] args) {
 
             // print liscence info
-            System.out.println("i2txt, Copyright (C) 2015, 2021 James McGrath");
-            System.out.println("This program comes with ABSOLUTELY NO WARRANTY;");
-            System.out.println("This is free software, and you are welcome to");
-            System.out.println("redistribute it under certain conditions;");
-            System.out.println("See https://www.gnu.org/licenses/gpl-3.0.txt for details;\n");
+            System.out.println(Constants.LISCENCE_BANNER);
 
             // get image files from target folder
             FilenameFilter filter = new FilenameFilter() {
                   public boolean accept(File directory, String name) {
-                        if (name.toLowerCase().matches(".*\\.(tif|tiff|jpg|jpeg|bmp|png)$")) {
+                        if (name.toLowerCase().matches(Constants.VALID_EXTENSIONS)) {
                               return true;
                         } else {
                               return false;
@@ -58,8 +54,7 @@ public class Main {
 
             //
             if (targets.length == 0) {
-                  System.out.println("Error: no image files found!");
-                  System.out.println("please copy images to ./targets and re-run!");
+                  System.out.println(Constants.ERROR_TARGETS);
             } else {
 
                   // instantate tesseract, set data oath
@@ -69,6 +64,10 @@ public class Main {
                   for (int i = 0; i < targets.length; i++) {
 
                         try {
+
+                              // 
+                              // tesseract.setOcrEngineMode(int ocrEngineMode);
+                              // tesseract.setPageSegMode(int mode);
 
                               // perform ocr on image
                               File image = targets[i];
